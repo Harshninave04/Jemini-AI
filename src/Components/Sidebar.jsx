@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Menu, Plus, CircleHelp, Settings, History, Locate } from 'lucide-react';
+import ToggleTheme from './ToggleTheme';
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
@@ -41,7 +42,9 @@ const Sidebar = () => {
           <div className="flex cursor-pointer items-center gap-[16px] pr-2.5">
             <Settings size={20} className="text-softTextColor" />
             {isOpen ? (
-              <p className="cursor-pointer font-semibold text-softTextColor">Settings</p>
+              <p className="cursor-pointer font-semibold text-softTextColor">
+                <ToggleTheme />
+              </p>
             ) : null}
           </div>
         </div>
