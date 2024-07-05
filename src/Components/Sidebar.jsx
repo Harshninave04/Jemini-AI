@@ -5,7 +5,7 @@ import ToggleTheme from './ToggleTheme';
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   return (
-    <div className="min-h-[100vh] inline-flex flex-col justify-between bg-bgSecondaryColor py-6 px-[13px]">
+    <div className="min-h-[100vh] inline-flex flex-col justify-between bg-bgSecondaryColor pt-6 px-[13px]">
       <div className="">
         <Menu
           strokeWidth={1.5}
@@ -25,7 +25,7 @@ const Sidebar = () => {
           </div>
         ) : null}
       </div>
-      <div className="gap-6 flex flex-col">
+      <div className="gap-6 flex flex-col mb-6">
         <div className="flex flex-col gap-4 text-sm ml-[6px]">
           <div className="flex cursor-pointer items-center gap-[16px] pr-2.5">
             <CircleHelp size={20} className="text-softTextColor" />
