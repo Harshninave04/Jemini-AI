@@ -17,13 +17,13 @@ const ToggleTheme = () => {
             Settings
           </p>
         </PopoverTrigger>
-        <PopoverContent className="w-52 bg-gray-100 ml-10 my-2 p-3 rounded-xl">
+        <PopoverContent className="w-56 bg-gray-100 ml-10 my-2 p-3 rounded-xl">
           <div className="inline-flex items-center gap-8">
             <div className="inline-flex items-center gap-3">
               <Moon size={20} className="text-softTextColor" />
               <p>Dark theme</p>
             </div>
-            <div className="bg-slate-300 rounded-full inline-flex items-center p-1">
+            <div className="w-8 h-8 rounded-full overflow-hidden relative">
               {/* <Switch
               defaultSelected
               aria-label="Automatic updates"
@@ -31,10 +31,14 @@ const ToggleTheme = () => {
               checked={theme === 'dark'} // Set checkbox state based on theme
               onChange={handleThemeChange} // Call toggle function on change
             /> */}
-                          
+
               {/* <Switch aria-label="Automatic updates" onChange={handleThemeChange} /> */}
-              <Switch defaultSelected color="success" onChange={handleThemeChange}></Switch>
-              
+              <Switch
+                defaultSelected
+                checked={theme === 'dark'} // Set checkbox state based on theme
+                color="success"
+                onChange={handleThemeChange}
+                className="absolute w-full h-full bg-gray-800 rounded-b-full"></Switch>
             </div>
           </div>
         </PopoverContent>
