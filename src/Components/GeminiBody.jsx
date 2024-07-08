@@ -1,4 +1,4 @@
-import { CircleUserRound } from 'lucide-react';
+import { CircleUserRound, Forward, Send } from 'lucide-react';
 import React from 'react';
 
 const GeminiBody = () => {
@@ -10,10 +10,13 @@ const GeminiBody = () => {
             JEMINI
           </p>
 
-          <CircleUserRound size={40} className="text-softTextColor animate-spin cursor-pointer hover:animate-none" />
+          <CircleUserRound
+            size={40}
+            className="text-softTextColor animate-spin cursor-pointer hover:animate-none"
+          />
         </div>
         <div className="max-w-[900px] m-auto">
-          <div className="my-8 font-medium p-5 leading-tight">
+          <div className="my-8 font-medium p-5 leading-tight bg-gray-800 rounded-xl">
             <p>
               <span className="text-6xl font-bold text-transparent bg-clip-text hover:bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500 hover:bg-gradient-to-r hover:from-blue-400 hover:to-yellow-50 cursor-not-allowed">
                 Hello, Harsh
@@ -50,6 +53,28 @@ const GeminiBody = () => {
                 <p className="text-gray-400 text-sm">to my boss</p>
               </p>
             </div>
+          </div>
+
+          {/* Form */}
+          <div className="absolute max-w-[900px] bottom-0 w-full m-auto px-5">
+            <form action="">
+              <div className="flex items-center justify-between gap-5 bg-bgSecondaryColor py-2.5 px-5 rounded-full">
+                <input
+                  type="text"
+                  placeholder="Ask something..."
+                  className="border-none outline-none p-2 w-full text-white bg-transparent"
+                />
+                <div className="flex cursor-pointer">
+                  <Send size={25} type="submit" />
+                </div>
+              </div>
+              <div>
+                <p className="flex items-center justify-center text-xs text-white p-2">
+                  Jemini may display inaccurate info, including about people, so double-check its
+                  responses. Your privacy and Jemini Apps
+                </p>
+              </div>
+            </form>
           </div>
         </div>
       </div>
