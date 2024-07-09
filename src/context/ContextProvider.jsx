@@ -88,7 +88,8 @@ const ContextProvider = ({ children }) => {
     recentPrompt,
     prevPrompt,
     setPrevPrompt, 
-    setRecentPrompt
+    setRecentPrompt,
+    setDisplayResults
 
   };
   return (

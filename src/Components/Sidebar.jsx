@@ -1,10 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Menu, Plus, CircleHelp, Settings, History, Locate } from 'lucide-react';
 import ToggleTheme from './ToggleTheme';
 import HistoryButton from './MiniComponents/HistoryButton.jsx';
+import { Context } from '@/context/ContextProvider';
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const { setDisplayResults, setInput } = useContext(Context);
   return (
     <div className="min-h-[100vh] inline-flex flex-col justify-between bg-bgSecondaryColor pt-6 px-[13px]">
       <div className="">
@@ -14,7 +16,11 @@ const Sidebar = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="cursor-pointer text-softTextColor ml-[6px]"
         />
-        <div className="mt-14 text-sm inline-flex items-center gap-[14px] border rounded-full px-[10px] py-[9px] bg-gray-200 text-gray-700 cursor-pointer">
+        <div
+          className="mt-14 text-sm inline-flex items-center gap-[14px] border rounded-full px-[10px] py-[9px] bg-gray-200 text-gray-700 cursor-pointer"
+          onClick={() => {
+            setDisplayResults(false), setInput("");
+          }}>
           <Plus size={20} className="" />
           {isOpen ? <p className="font-medium">New chat</p> : null}
         </div>
@@ -31,14 +37,16 @@ const Sidebar = () => {
           <div className="flex cursor-pointer items-center gap-[16px] pr-2.5">
             <CircleHelp size={20} className="text-softTextColor" />
             {isOpen ? (
-              <p className="cursor-pointer font-semibold text-softTextColor"><HistoryButton props="Help"/></p>
+              <p className="cursor-pointer font-semibold text-softTextColor">
+                <HistoryButton props="Help" />
+              </p>
             ) : null}
           </div>
           <div className="flex cursor-pointer items-center gap-[16px] pr-2.5">
             <History size={20} className="text-softTextColor" />
             {isOpen ? (
               <p className="cursor-pointer font-semibold text-softTextColor">
-                <HistoryButton props="History"/>
+                <HistoryButton props="History" />
               </p>
             ) : null}
           </div>

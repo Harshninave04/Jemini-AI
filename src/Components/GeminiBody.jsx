@@ -83,6 +83,7 @@ const GeminiBody = () => {
               <div className="flex items-center justify-between gap-5 bg-bgSecondaryColor py-2.5 px-5 rounded-full">
                 <input
                   onChange={(e) => setInput(e.target.value)}
+                  value={input}
                   type="text"
                   placeholder="Ask something..."
                   className="border-none outline-none p-2 w-full text-softTextColor bg-transparent"
