@@ -1,6 +1,6 @@
 "use client"
 import { Context } from '@/context/ContextProvider';
-import { CircleUserRound, Send, Sparkles } from 'lucide-react';
+import { CircleUserRound, Send, UserRound } from 'lucide-react';
 import React, { useContext } from 'react';
 
 const GeminiBody = () => {
@@ -14,10 +14,7 @@ const GeminiBody = () => {
             JEMINI
           </p>
 
-          <CircleUserRound
-            size={40}
-            className="text-softTextColor animate-spin cursor-pointer hover:animate-none"
-          />
+          <CircleUserRound size={40} className="text-softTextColor cursor-pointer" />
         </div>
         <div className="max-w-[900px] m-auto">
           {!displayResults ? (
@@ -64,7 +61,7 @@ const GeminiBody = () => {
           ) : (
             <div>
               <div className=" my-10 flex items-center gap-5">
-                <CircleUserRound size={40} className="text-softTextColor" />
+                <UserRound size={40} className="text-softTextColor" />
                 <p className="text-xl text-softTextColor">{recentPrompt}</p>
               </div>
               <div className="flex items-start gap-5 text-gray-400">
@@ -72,8 +69,10 @@ const GeminiBody = () => {
                   src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
                   alt=""
                   className="w-8 h-8"
-                  />
-                  <p dangerouslySetInnerHTML={{__html: results}} className='text-md loading-5 font-normal'></p>
+                />
+                <p
+                  dangerouslySetInnerHTML={{ __html: results }}
+                  className="text-md loading-5 font-normal"></p>
               </div>
             </div>
           )}
