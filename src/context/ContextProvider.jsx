@@ -1,10 +1,59 @@
 'use client';
+import run from '@/lib/jemini';
 import React, { createContext, useState, useEffect } from 'react';
 
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Check localStorage on initial render
+  const [input, setInput] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState([]);
+  const [recentPrompt, setRecentPrompt] = useState('');
+  const [displayResults, setDisplayResults] = useState(false);
+  const [prevPrompt, setPrevPrompt] = useState([]);
+
+  // Paragraph delay
+
+  const paragraphDelay = (index, newWord) => {
+    setTimeout(() => {
+      setResults((prev) => prev + newWord);
+    }, 70 * index);
+  }
+
+  // On submit
+  const submit = async (prompt) => {
+    setLoading(true);
+    setResults('');
+    setDisplayResults(true);
+    setRecentPrompt(input);
+
+    if (input && prompt) {
+      setPrevPrompt((prev) => [...prev, input]);
+    }
+
+    const response = input ? await run(input) : await run(prompt);
+    const boldResponse = response.split("**");
+    let newArray = "";
+    for (let i = 0; i < boldResponse.length; i++){
+      if (i === 0 || i % 2 !== 1) {
+        newArray += boldResponse[i];
+      } else {
+        newArray += `<b>${boldResponse[i]}</b>`;
+      }
+    }
+
+    let newRes = newArray.split("*").join("</br>")
+    let newRes2 = newRes.split(" ");
+
+    for (let i = 0; i < newRes.length; i++){
+      const newWord = newRes2[i];
+      paragraphDelay(i, newWord + " ");
+    }
+    setLoading(false)
+    setInput(false)
+  };
+
 
   const toggle = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
@@ -24,9 +73,22 @@ const ContextProvider = ({ children }) => {
 
     return () => window.removeEventListener('storage', handleSystemThemeChange); // Cleanup on unmount
   }, []);
+
+
   const contextValue = {
     theme,
     toggle,
+    submit, 
+    setInput, 
+    input, 
+    results,
+    loading,
+    displayResults,
+    recentPrompt,
+    prevPrompt,
+    setPrevPrompt, 
+    setRecentPrompt
+
   };
   return (
     <Context.Provider value={contextValue}>
