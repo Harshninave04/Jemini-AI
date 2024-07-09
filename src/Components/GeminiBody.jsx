@@ -1,6 +1,6 @@
 "use client"
 import { Context } from '@/context/ContextProvider';
-import { CircleUserRound, Send } from 'lucide-react';
+import { CircleUserRound, Send, Sparkles } from 'lucide-react';
 import React, { useContext } from 'react';
 
 const GeminiBody = () => {
@@ -65,7 +65,15 @@ const GeminiBody = () => {
             <div>
               <div className=" my-10 flex items-center gap-5">
                 <CircleUserRound size={40} className="text-softTextColor" />
-                <p className='text-xl text-white'>{recentPrompt}</p>
+                <p className="text-xl text-softTextColor">{recentPrompt}</p>
+              </div>
+              <div className="flex items-start gap-5 text-gray-400">
+                <img
+                  src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
+                  alt=""
+                  className="w-8 h-8"
+                  />
+                  <p dangerouslySetInnerHTML={{__html: results}} className='text-md loading-5 font-normal'></p>
               </div>
             </div>
           )}
@@ -74,10 +82,10 @@ const GeminiBody = () => {
             <form action={submit}>
               <div className="flex items-center justify-between gap-5 bg-bgSecondaryColor py-2.5 px-5 rounded-full">
                 <input
-                  onChange={(e)=>setInput(e.target.value)}
+                  onChange={(e) => setInput(e.target.value)}
                   type="text"
                   placeholder="Ask something..."
-                  className="border-none outline-none p-2 w-full text-white bg-transparent"
+                  className="border-none outline-none p-2 w-full text-softTextColor bg-transparent"
                 />
                 <div className="flex cursor-pointer">
                   <Send size={25} type="submit" />

@@ -46,12 +46,13 @@ const ContextProvider = ({ children }) => {
     let newRes = newArray.split("*").join("</br>")
     let newRes2 = newRes.split(" ");
 
-    for (let i = 0; i < newRes.length; i++){
+    const paragraphs = response.split('\n');
+    for (let i = 0; i < newRes2.length; i++){
       const newWord = newRes2[i];
       paragraphDelay(i, newWord + " ");
     }
     setLoading(false)
-    setInput(false)
+    setInput("")
   };
 
 
