@@ -40,20 +40,20 @@ const GeminiBody = () => {
                 </div>
                 <div class=" h-16 border-gray-100 bg-gray-200 rounded-xl shadow-md overflow-hidden font-bold bg-gradient-to-r from-yellow-50 to-orange-50 animate-pulse">
                   <p class="px-5 py-2 text-gray-700 text-base">
-                    Write a thank you note
-                    <p className="text-gray-400 text-sm">to my boss</p>
+                    Ideas to surprise a friend
+                    <p className="text-gray-400 text-sm"> on their birthday</p>
                   </p>
                 </div>
                 <div class=" h-16 border-gray-100 bg-gray-200 rounded-xl shadow-md overflow-hidden font-bold bg-gradient-to-b from-yellow-50 to-orange-50 animate-pulse">
                   <p class="px-5 py-2 text-gray-700 text-base">
-                    Write a thank you note
-                    <p className="text-gray-400 text-sm">to my boss</p>
+                    Help me write a refund email
+                    <p className="text-gray-400 text-sm">for a product that’s damaged draw</p>
                   </p>
                 </div>
                 <div class=" h-16 border-gray-100 bg-gray-200 rounded-xl shadow-md overflow-hidden font-bold bg-gradient-to-t from-yellow-50 to-orange-50 animate-pulse">
                   <p class="px-5 py-2 text-gray-700 text-base">
-                    Write a thank you note
-                    <p className="text-gray-400 text-sm">to my boss</p>
+                    Recommend new types of water sports,
+                    <p className="text-gray-400 text-sm"> including pros & cons</p>
                   </p>
                 </div>
               </div>
