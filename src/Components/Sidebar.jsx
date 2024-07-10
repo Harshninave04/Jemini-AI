@@ -2,7 +2,6 @@
 import React, { useContext, useState } from 'react';
 import { Menu, Plus, CircleHelp, Settings, History, Locate, MessageSquare } from 'lucide-react';
 import ToggleTheme from './ToggleTheme';
-import HistoryButton from './MiniComponents/HistoryButton.jsx';
 import { Context } from '@/context/ContextProvider';
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -53,7 +52,7 @@ const Sidebar = () => {
             <CircleHelp size={20} className="text-softTextColor" />
             {isOpen ? (
               <p className="cursor-pointer font-semibold text-softTextColor">
-                <HistoryButton props="Help" />
+                Help 
               </p>
             ) : null}
           </div>
@@ -61,7 +60,7 @@ const Sidebar = () => {
             <History size={20} className="text-softTextColor" />
             {isOpen ? (
               <p className="cursor-pointer font-semibold text-softTextColor">
-                <HistoryButton props="History" />
+                History
               </p>
             ) : null}
           </div>

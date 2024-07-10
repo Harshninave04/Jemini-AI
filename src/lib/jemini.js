@@ -6,7 +6,6 @@
  * See the getting started guide for more information
  * https://ai.google.dev/gemini-api/docs/get-started/node
  */
-
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from '@google/generative-ai'
 
 const apiKey = "AIzaSyBcwhB5jO9KSGc_WRKz1Mwk0e0gT72cAw0";

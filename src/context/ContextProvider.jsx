@@ -5,7 +5,12 @@ import React, { createContext, useState, useEffect } from 'react';
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Check localStorage on initial render
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'light';
+    }
+    return 'light'; // Default theme for server-side rendering
+  }); // Check localStorage on initial render
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
