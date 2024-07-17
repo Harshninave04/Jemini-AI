@@ -2,6 +2,12 @@
 
 **JEMINI-AI** is a large language model inspired by ChatGPT and Gemini AI, capable of engaging in conversations, generating different creative text formats, and answering your questions in an informative way.
 
+## Preview
+
+![Jemini-Dark-Theme](./public/jemini_darkMode.png)
+![Jemini-Light-Theme](./public/jemini_lightMode.png)
+![Jemini-Sidebar](./public/jemini_closedSidebar.png)
+![Jemini-body](./public/jemini_body.png)
 
 ## Getting Started
 
